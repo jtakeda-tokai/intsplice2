@@ -1,0 +1,12 @@
+# IntSplice2 prediction with annotation (tab-separated file format)
+Column 1: chromosome number
+Column 2: position on genome
+Column 3: reference nucleotide
+Column 4: altered nucleotide
+Column 5: start position of affected exon
+Column 6: end position of affected exon
+Column 7: SNV position form the 3' end of intron
+Column 8: strand
+Column 9: gene name, Ensembl 101 ID and exon number
+Column 10: IntSplice2 prediction (0~1, pathogenic >= 0.5 )
+
