@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-130959089-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-130959089-2');
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>IntSplice ver. 2.0 about</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed-->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- header -->
+  <div id="header" class="container">
+    <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand" href=index.html>Top</a>
+      <a class="navbar-brand" href=about.html>About</a>
+      <a class="navbar-brand" href=download.html>Download</a>
+    </div>
+    </nav>
+  </div>
+    
+  <div class="container">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <p>
+IntSplice ver. 2.0 is a tool to predict a splicing consequence of an SNV at intron positions -50 to -3 close the 3' end of an intron of the human genome.<br />
+      </p>
+      <p>
+Publication
+      <ul>
+Please cite: Jun-ichi Takeda, Sae Fukami, Akira Tamura, Akihide Shibata, and Kinji Ohno. “IntSplice2: Prediction of the Splicing Effects of Intronic Single-Nucleotide Variants Using LightGBM Modeling” <a href=https://doi.org/10.3389/fgene.2021.701076 target=_blank><b><i>Front Genet.</i></b> 2021 Jul 19;12:701076.</a> (<a href=https://pubmed.ncbi.nlm.nih.gov/34349788 target=_blank>PMID: 34349788</a>).
+      </ul>
+      </p>
+      <p>
+Materials and Methods
+      <ol>
+        <li>
+A total of 1,787 pathogenic SNVs located from intronic positions -50 to -3 according to the transcript annotations of Ensembl release 101 were extracted from the Human Gene Mutation Database (HGMD) Professional release 2020/04 with mutation category DM (disease-causing mutation) and ClinVar release 2021/03/15 with CLNVC = single_nucleotide_variant and intron_variant, and CLNSIG = Pathogenic on human genome assembly GRCh38/hg38.
+        </li>
+        <li>
+A total of 5,406 common SNVs with a minor allele frequency (MAF) between 0.01 and 0.50 located at the same positions as pathogenic SNVs were extracted from the dbSNP build 151. Among them, 1,787 common SNVs were randomly selected.
+        </li>
+        <li>
+A total of 110 features (Table 1) representing splicing cis-elements were used to make gradient boosting (GB) models with  a machine learning library, Optuna and LightGBM, on Python version 3.8 (Figure 1).
+        </li>
+        <li>
+To achieve quick response, all possible SNVs located from intronic positions -50 to -3 on the human genome were pre-processed by IntSplice ver. 2.0. The web service program extracts scores from the pre-processed dataset. The pre-processed genome-wide scores of IntSplice ver. 2.0 are also available under the "Download" tab.
+        </li>
+      </ol>
+      </p>
+    </div>
+
+Table 1. List of 110 features.
+    <table border="1" cellspacing="0">
+      <tr>
+        <th>Features</th>
+        <th>3'/Ex/5'</th>
+        <th>Position</th>
+      </tr>
+      <tr>
+        <td>Best branchpoint sequence (BPS)-related <b>x3</b></td>
+        <td>3'</td>
+        <td>Int-50 to Int-3</td>
+      </tr>
+      <tr>
+        <td>Polypyrimidine (PPT)-related <b>x10</b></td>
+        <td>3'</td>
+        <td>Int-50 to Int-3</td>
+      </tr>
+      <tr>
+        <td>Best BPS-PPT-related <b>x6</b></td>
+        <td>3'</td>
+        <td>Int-50 to Int-3</td>
+      </tr>
+      <tr>
+        <td>Nucleotide at Int-3 <b>x4</b></td>
+        <td>3'</td>
+        <td>Int-3</td>
+      </tr>
+      <tr>
+        <td>1st nucleotide of exon <b>x4</b></td>
+        <td>Ex</td>
+        <td>Ex+1</td>
+      </tr>
+      <tr>
+        <td>Presence of A or G at Int-7, Int-6, or Int-5</td>
+        <td>3'</td>
+        <td>Int-7 to Int-5</td>
+      </tr>
+      <tr>
+        <td>Ratio of purines (A/G) at Int-20 to Int-8</td>
+        <td>3'</td>
+        <td>Int-20 to Int-8</td>
+      </tr>
+      <tr>
+        <td>Number of G nucleotides at Int-12 to Int-3</td>
+        <td>3'</td>
+        <td>Int-12 to Int-3</td>
+      </tr>
+      <tr>
+        <td>Number of GGG trinucleotides at Int-12 to Int-3</td>
+        <td>3'</td>
+        <td>Int-12 to Int-3</td>
+      </tr>
+      <tr>
+        <td>SD-Score</td>
+        <td>Ex/5'</td>
+        <td>Ex-3 to Int+6</td>
+      </tr>
+      <tr>
+        <td>Exon length</td>
+        <td>Ex</td>
+        <td>Ex</td>
+      </tr>
+      <tr>
+        <td>MaxEntScan::score3ss</td>
+        <td>3'/Ex</td>
+        <td>Int-20 to Ex+3</td>
+      </tr>
+      <tr>
+        <td>MaxEntScan::score5ss</td>
+        <td>Ex/5'</td>
+        <td>Ex-3 to Int+6</td>
+      </tr>
+      <tr>
+        <td>Shapiro Senapathy score at 3' ss</td>
+        <td>3'/Ex</td>
+        <td>Int-14 to Ex+1</td>
+      </tr>
+      <tr>
+        <td>Shapiro Senapathy score at 5' ss</td>
+        <td>Ex/5'</td>
+        <td>Ex-2 to Int+6</td>
+      </tr>
+      <tr>
+        <td>Gain of GT dinucleotide</td>
+        <td>3'</td>
+        <td>Int-50 to Int-3</td>
+      </tr>
+      <tr>
+        <td>Gain of AG dinucleotide</td>
+        <td>3'</td>
+        <td>Int-50 to Int-3</td>
+      </tr>
+      <tr>
+        <td>Sum SpliceAid2 score of RNA-binding protein (RBP) <b>x71</b></td>
+        <td>3'/Ex/5'</td>
+        <td>Int-50 to Int+50</td>
+      </tr>
+    </table><br>
+
+    <img src="Suppl_Fig_S1.png" title="Figure 1"><br><br>
+Figure 1. Overview of strategies for IntSplice2 and IntSplice2-Benchmark (BM). IntSplice2-BM is the model to compare with IntSplice which is the previous version of IntSplice2 by using the test data which does not include in the both models.<br>
+    <br><br>
+
+  </div>
+    
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
