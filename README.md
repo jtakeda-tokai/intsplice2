@@ -1,4 +1,5 @@
 # IntSplice2 (hg19/hg38)
+### :warning: This site temporarily stores data for the web service ([IntSplice2](https://www.med.nagoya-u.ac.jp/neurogenetics/IntSplice2/)), which is currently unavailable.
 ## Abstract
 IntSplice predicts a splicing consequence of a single nucleotide variation (SNV) at intronic positions -50 to -3 close to the 3' end of an intron of the human genome. Compared to our previous ver. 1.x that was modeled by Support Vector Machine (SVM), ver. 2.0 used a newly built training dataset that included 54% more pathogenic and common SNVs, and was modeled by Gradient Boosting (GB).
 ## Materials and Methods
