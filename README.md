@@ -5,7 +5,8 @@ IntSplice predicts a splicing consequence of a single nucleotide variation (SNV)
 1. A total of 1,787 pathogenic SNVs located from intronic positions -50 to -3 according to the transcript annotations of Ensembl release 101 were extracted from the Human Gene Mutation Database (HGMD) Professional release 2020/04 with mutation category DM (disease-causing mutation) and ClinVar release 2021/03/15 with CLNVC = single_nucleotide_variant and intron_variant, and CLNSIG = Pathogenic on human genome assembly GRCh38/hg38.
 2. A total of 5,406 common SNVs with a minor allele frequency (MAF) between 0.01 and 0.50 located at the same positions as pathogenic SNVs were extracted from the dbSNP build 151. Among them, 1,787 common SNVs were randomly selected.
 3. A total of 110 features representing splicing cis-elements were used to make gradient boosting (GB) models with a machine learning library, Optuna and LightGBM, on Python version 3.8 (Figure 1).
-4. To achieve quick response, all possible SNVs located from intronic positions -50 to -3 on the human genome were pre-processed by IntSplice ver. 2.0. The web service program extracts scores from the pre-processed dataset (see download folder).\
+4. To achieve quick response, all possible SNVs located from intronic positions -50 to -3 on the human genome were pre-processed by IntSplice ver. 2.0. The web service program extracts scores from the pre-processed dataset (see download folder).
+
 ![Figure 1](/scripts/Suppl_Fig_S1.png)\
 Figure 1. Overview of strategies for IntSplice2 and IntSplice2-Benchmark (BM). IntSplice2-BM is the model to compare with IntSplice which is the previous version of IntSplice2 by using the test data which does not include in the both models.
 ## Publication
