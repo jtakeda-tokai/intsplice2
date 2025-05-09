@@ -112,6 +112,6 @@ Figure 1. Overview of strategies for IntSplice2 and IntSplice2-Benchmark (BM). I
 ## Publication
 Please cite: Jun-ichi Takeda, Sae Fukami, Akira Tamura, Akihide Shibata, and Kinji Ohno. “IntSplice2: Prediction of the Splicing Effects of Intronic Single-Nucleotide Variants Using LightGBM Modeling” Front Genet. 2021 Jul 19;12:701076 ([PMID: 34349788](https://pubmed.ncbi.nlm.nih.gov/34349788/)).
 ## Related tools
-[InMeRF (hg38)](https://github.com/jtakeda-tokai/inmerf_hg38.git)\
-[InMeRF (hg19)](https://github.com/jtakeda-tokai/inmerf_hg19.git)\
-[FexSplice (hg19/hg38)](https://github.com/jtakeda-tokai/fexsplice.git)
+- [InMeRF (hg38)](https://github.com/jtakeda-tokai/inmerf_hg38.git): To predict the pathogenicity of nonsynonymous SNVs (nsSNVs).
+- [InMeRF (hg19)](https://github.com/jtakeda-tokai/inmerf_hg19.git): To predict the pathogenicity of nonsynonymous SNVs (nsSNVs).
+- [FexSplice (hg19/hg38)](https://github.com/jtakeda-tokai/fexsplice.git): To predict the pathogenicity of SNVs at the first nucleotide of exons (Fex-SNVs) only when the reference base is G.
